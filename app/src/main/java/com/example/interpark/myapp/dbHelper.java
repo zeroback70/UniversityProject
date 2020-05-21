@@ -11,7 +11,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class dbHelper extends SQLiteOpenHelper {
 
     private static final String DATABASE_NAME = "myDiary.db";
-    private static final int DATABASE_VERSION =1;
+    private static final int DATABASE_VERSION = 1;
 
 
     /*

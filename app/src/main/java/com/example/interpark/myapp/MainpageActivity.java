@@ -77,7 +77,12 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
                 .setMaximumDate(CalendarDay.from(2030, 11, 31))
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
-        
+
+        materialCalendarView.addDecorators(
+                new SundayDecorator(),
+                new SaturdayDecorator()
+        );
+
 
         Long now = System.currentTimeMillis();
         Date date = new Date(now);

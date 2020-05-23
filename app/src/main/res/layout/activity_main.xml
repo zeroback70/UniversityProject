@@ -167,7 +167,7 @@
                 android:background="@drawable/round"
                 android:gravity="center"
                 android:padding="7dp"
-                android:text="비밀번호 변경하기"
+                android:text="비밀번호 변경"
                 android:textColor="#000000"
                 android:textStyle="bold" />
 

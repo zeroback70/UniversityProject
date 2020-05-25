@@ -80,7 +80,8 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
 
         materialCalendarView.addDecorators(
                 new SundayDecorator(),
-                new SaturdayDecorator()
+                new SaturdayDecorator(),
+                new TodayDecorator()
         );
 
 
@@ -297,4 +298,7 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
 
 
     }
+
+
+
 }

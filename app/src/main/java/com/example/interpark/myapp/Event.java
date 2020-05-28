@@ -3,9 +3,14 @@ package com.example.interpark.myapp;
 import java.io.Serializable;
 
 public class Event implements Serializable {
-    String title;
-    String body;
-    boolean checked;
+    private String title;
+    private String body;
+    private boolean checked;
+
+    public Event(String title, String body) {
+        this.title = title;
+        this.body = body;
+    }
 
     public boolean isChecked() {
         return checked;
@@ -20,11 +25,6 @@ public class Event implements Serializable {
     }
 
     public void setBody(String body) {
-        this.body = body;
-    }
-
-    public Event(String title, String body) {
-        this.title = title;
         this.body = body;
     }
 

@@ -70,7 +70,6 @@ public class MainActivity extends BaseActivity implements TextView.OnEditorActio
         tvBtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 try {
                     helper = new dbHelper(MainActivity.this);
                     db = helper.getReadableDatabase();

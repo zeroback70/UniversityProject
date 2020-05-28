@@ -1,9 +1,7 @@
 package com.example.interpark.myapp;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.os.Bundle;
@@ -13,7 +11,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -58,13 +55,13 @@ public class LoginPopupActivity extends BaseActivity implements View.OnClickList
         //EditText etName, etId, etPw, etCkeckPw, etPhone;
         //Button btnSave, btnCancel;
 
-        etName = (EditText)findViewById(R.id.etName);
-        etId = (EditText)findViewById(R.id.etId);
-        etPw = (EditText)findViewById(R.id.etPw);
-        etCkeckPw = (EditText)findViewById(R.id.etCheckPw);
-        etPhone = (EditText)findViewById(R.id.etPhone);
-        btnSave = (Button)findViewById(R.id.btnSave);
-        btnCancel = (Button)findViewById(R.id.btnCancel);
+        etName = (EditText) findViewById(R.id.etName);
+        etId = (EditText) findViewById(R.id.etId);
+        etPw = (EditText) findViewById(R.id.etPw);
+        etCkeckPw = (EditText) findViewById(R.id.etCheckPw);
+        etPhone = (EditText) findViewById(R.id.etPhone);
+        btnSave = (Button) findViewById(R.id.btnSave);
+        btnCancel = (Button) findViewById(R.id.btnCancel);
 
         helper = new dbHelper(this);
 
@@ -93,8 +90,8 @@ public class LoginPopupActivity extends BaseActivity implements View.OnClickList
                 String phone = etPhone.getText().toString();
 
 
-                if(name.equals("") || id.equals("") || pw.equals("") || checkPw.equals("") || phone.equals("")){
-                    Toast.makeText(getApplicationContext(),"공백없이 입력하세요.",Toast.LENGTH_SHORT).show();
+                if (name.equals("") || id.equals("") || pw.equals("") || checkPw.equals("") || phone.equals("")) {
+                    Toast.makeText(getApplicationContext(), "공백없이 입력하세요.", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 userInfo.setName(name);
@@ -102,14 +99,14 @@ public class LoginPopupActivity extends BaseActivity implements View.OnClickList
                 userInfo.setPasswd(pw);
                 userInfo.setPhone(phone);
 
-                if (pw.equals(checkPw)){
+                if (pw.equals(checkPw)) {
                     Toast.makeText(this, "같습니다", Toast.LENGTH_SHORT).show();
                     StringBuffer sb = new StringBuffer();
                     sb.append("INSERT INTO user (");
                     sb.append(" id, name, passwd, phone )");
                     sb.append(" VALUES (?, ?, ?, ?)");
 
-                    db.execSQL(sb.toString(), new Object[]{ userInfo.getId(), userInfo.getName(), userInfo.getPasswd(), userInfo.getPhone()});
+                    db.execSQL(sb.toString(), new Object[]{userInfo.getId(), userInfo.getName(), userInfo.getPasswd(), userInfo.getPhone()});
 
                     db.close();
                     finish();

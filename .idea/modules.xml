@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/MyDiaryApplication2-master.iml" filepath="$PROJECT_DIR$/MyDiaryApplication2-master.iml" group="MyDiaryApplication2-master" />
       <module fileurl="file://$PROJECT_DIR$/app/MyDiaryApplication2-master-app.iml" filepath="$PROJECT_DIR$/app/MyDiaryApplication2-master-app.iml" group="MyDiaryApplication2-master/app" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/dohyuntime2.iml" filepath="$PROJECT_DIR$/dohyuntime2.iml" group="dohyuntime2" />
+      <module fileurl="file://$PROJECT_DIR$/app/dohyuntime2-app.iml" filepath="$PROJECT_DIR$/app/dohyuntime2-app.iml" group="dohyuntime2/app" />
     </modules>
   </component>
 </project>

@@ -7,7 +7,7 @@ import android.content.Context;
  * Created by dohyunkyung on 2020-05-12.
  */
 
-public class MApp extends Application{
+public class MApp extends Application {
     private Context currentContext;
 
 

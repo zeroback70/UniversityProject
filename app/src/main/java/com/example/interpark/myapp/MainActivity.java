@@ -70,7 +70,6 @@ public class MainActivity extends BaseActivity implements TextView.OnEditorActio
         tvBtLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 try {
                     helper = new dbHelper(MainActivity.this);
                     db = helper.getReadableDatabase();
@@ -175,9 +174,9 @@ public class MainActivity extends BaseActivity implements TextView.OnEditorActio
     @Override
     public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
         /* 키보드에서 다음 or 완료버튼을 눌렀을때 이벤트
-        *  - id에서는 pw로 포커스 이동
-        *  - pw에서는 로그인버튼 클릭
-        */
+         *  - id에서는 pw로 포커스 이동
+         *  - pw에서는 로그인버튼 클릭
+         */
         if ((actionId == EditorInfo.IME_ACTION_DONE) || (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) {
             View nextFocus = v.focusSearch(View.FOCUS_DOWN);
             if (nextFocus != null && nextFocus instanceof EditText) {

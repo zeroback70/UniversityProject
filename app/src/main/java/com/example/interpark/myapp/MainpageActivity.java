@@ -77,7 +77,13 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
                 .setMaximumDate(CalendarDay.from(2030, 11, 31))
                 .setCalendarDisplayMode(CalendarMode.MONTHS)
                 .commit();
-        
+
+        materialCalendarView.addDecorators(
+                new SundayDecorator(),
+                new SaturdayDecorator(),
+                new TodayDecorator()
+        );
+
 
         Long now = System.currentTimeMillis();
         Date date = new Date(now);
@@ -174,6 +180,7 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
 
                     break;
                 }
+
             case R.id.btRead:
                 String selectDate = btDate.getText().toString();
 
@@ -221,6 +228,10 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
                     Toast.makeText(getApplicationContext(), "일기가 없습니다.", Toast.LENGTH_SHORT).show();
                     return;
                 }
+
+                case R.id.btEvent:
+                    Intent intent = new Intent(this, EventActivity.class);
+                    startActivity(intent);
         }
     }
 
@@ -292,4 +303,6 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
 
 
     }
+
+
 }

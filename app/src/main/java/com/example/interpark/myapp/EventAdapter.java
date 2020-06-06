@@ -16,7 +16,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
         public ViewHolder(View view){
             super(view);
-            textView = view.findViewById(R.id.textView);
+            textView = view.findViewById(R.id.title);
         }
 
     }
@@ -31,7 +31,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = layoutInflater.inflate(R.layout.item1, parent, false);
+        View view = layoutInflater.inflate(R.layout.event, parent, false);
         return new ViewHolder(view);
     }
 

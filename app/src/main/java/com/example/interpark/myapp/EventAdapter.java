@@ -38,6 +38,8 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
         @Override
         public void onClick(View view) {
             Event event = arrayList.get(super.getAdapterPosition());
+            String s = String.format("index: %d,  title: %s", super.getAdapterPosition(), event.getTitle());
+            Toast.makeText(view.getContext(), s, Toast.LENGTH_SHORT).show();
         }
 
         @Override

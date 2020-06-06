@@ -49,7 +49,6 @@ public class EventActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
 //    @Override

@@ -4,12 +4,10 @@ import java.io.Serializable;
 
 public class Event implements Serializable {
     private String title;
-    private String body;
     private boolean checked;
 
-    public Event(String title, String body) {
+    public Event(String title) {
         this.title = title;
-        this.body = body;
     }
 
     public boolean isChecked() {
@@ -18,14 +16,6 @@ public class Event implements Serializable {
 
     public void setChecked(boolean checked) {
         this.checked = checked;
-    }
-
-    public String getBody() {
-        return body;
-    }
-
-    public void setBody(String body) {
-        this.body = body;
     }
 
     public String getTitle() {

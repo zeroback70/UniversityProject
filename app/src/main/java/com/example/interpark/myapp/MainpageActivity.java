@@ -41,7 +41,7 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
 
     Calendar calendar = Calendar.getInstance();
     MaterialCalendarView materialCalendarView;
-    Button btDate, btWrite, btRead, btAll;
+    Button btDate, btWrite, btRead, btAll, btEvent;
     String id, name;
 
     dbHelper helper;
@@ -50,6 +50,12 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
 
 
     public static String UPDATEIS = "X";
+
+//    public void btEvent_clicked(View view){
+//        Intent intent = new Intent(this, EventActivity.class);
+//        startActivity(intent);
+//    }
+//
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -68,6 +74,7 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
         btWrite = (Button) findViewById(R.id.btWrite);
         btRead = (Button) findViewById(R.id.btRead);
         btAll = (Button) findViewById(R.id.btAll);
+        btEvent = (Button) findViewById(R.id.btEvent);
         materialCalendarView = (MaterialCalendarView) findViewById(R.id.calendarView);
 
 
@@ -95,6 +102,7 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
         btDate.setOnClickListener(this);
         btWrite.setOnClickListener(this);
         btRead.setOnClickListener(this);
+        btEvent.setOnClickListener(this);
 
 
         Intent intent = getIntent();
@@ -229,9 +237,9 @@ public class MainpageActivity extends BaseActivity implements View.OnClickListen
                     return;
                 }
 
-                case R.id.btEvent:
-                    Intent intent = new Intent(this, EventActivity.class);
-                    startActivity(intent);
+            case R.id.btEvent:
+                Intent intent = new Intent(MainpageActivity.this, EventActivity.class);
+                startActivity(intent);
         }
     }
 

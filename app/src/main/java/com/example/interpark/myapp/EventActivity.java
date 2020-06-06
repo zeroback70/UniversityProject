@@ -9,6 +9,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import java.util.ArrayList;
 import java.util.ListIterator;
@@ -34,12 +35,16 @@ public class EventActivity extends AppCompatActivity {
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(eventAdapter);
 
-        Button button = (Button) findViewById(R.id.btnDelete);
+        Button button = (Button) findViewById(R.id.btAdd);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                EditText e = (EditText)findViewById(R.id.editText);
+                String s = e.getText().toString();
+                e.setText("");
+                arrayList.add(s);
+                eventAdapter.notifyDataSetChanged();
             }
         });
 

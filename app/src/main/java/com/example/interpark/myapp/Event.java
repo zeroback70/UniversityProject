@@ -7,9 +7,8 @@ public class Event implements Serializable {
     private String body;
     private boolean checked;
 
-    public Event(String title, String body) {
+    public Event(String title) {
         this.title = title;
-        this.body = body;
     }
 
     public boolean isChecked() {

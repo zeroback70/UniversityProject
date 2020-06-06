@@ -17,16 +17,16 @@ import java.util.ListIterator;
 public class EventActivity extends AppCompatActivity {
 
     EventAdapter eventAdapter;
-    ArrayList<String> arrayList;
+    static ArrayList<Event> arrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event);
 
-        arrayList = new ArrayList<String>();
-        arrayList.add("OOO 만나기");
-        arrayList.add("과제하기");
+        arrayList = new ArrayList<Event>();
+        arrayList.add(new Event("OOO 만나기"));
+        arrayList.add(new Event("과제하기"));
 
         eventAdapter = new EventAdapter(this, arrayList);
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
@@ -43,7 +43,7 @@ public class EventActivity extends AppCompatActivity {
                 EditText e = (EditText)findViewById(R.id.editText);
                 String s = e.getText().toString();
                 e.setText("");
-                arrayList.add(s);
+                arrayList.add(new Event(s));
                 eventAdapter.notifyDataSetChanged();
             }
         });

@@ -16,15 +16,21 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
         public ViewHolder(View view){
             super(view);
-            textView = view.findViewById(R.id.title);
+            textView = view.findViewById(R.id.textView);
+        }
+
+        public void setData(){
+            Event event = arrayList.get(getAdapterPosition());
+            textView.setText(event.getTitle());
+
         }
 
     }
 
-    LayoutInflater layoutInflater;
-    ArrayList<String> arrayList;
+    static LayoutInflater layoutInflater;
+    static ArrayList<Event> arrayList;
 
-    public EventAdapter(Context context, ArrayList<String> arrayList){
+    public EventAdapter(Context context, ArrayList<Event> arrayList){
         this.arrayList = arrayList;
         this.layoutInflater = LayoutInflater.from(context);
     }
@@ -37,7 +43,7 @@ public class EventAdapter extends RecyclerView.Adapter<EventAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.textView.setText(arrayList.get(position));
+        holder.setData();
     }
 
     @Override
